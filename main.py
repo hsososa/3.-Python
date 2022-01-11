@@ -62,10 +62,12 @@ with open(budget_csv) as csvfile:
 
     # Outputting a text file with results of analysis
     os.chdir(r"C:\Users\nsososa1\Documents\GT Boot Camp\python-challenge\PyBank\Analysis")
-    print(f"Total Months: {total_months}\n", file=open("bank_analysis.txt", "w"))
-    print(f"Total: $ {net_total}\n", file=open("bank_analysis.txt", "a"))
-    print(f"Average Change: $ {mean_diff}\n", file=open("bank_analysis.txt", "a"))
-    print(f"Greatest Increase in Profits:{increase_month} (${increase})\n", file=open("bank_analysis.txt", "a"))
-    print(f"Greatest Decrease in Profits: {decrease_month} (${decrease}\n", file=open("bank_analysis.txt", "a"))
+    print("Financial Analysis", file=open("bank_analysis.txt", "w"))
+    print("----------------------------", file=open("bank_analysis.txt", "a"))
+    print(f"Total Months: {total_months}\n", file=open("bank_analysis.txt", "a"))
+    print(f"Total: $ {net_total}", file=open("bank_analysis.txt", "a"))
+    print(f"Average Change: $ {mean_diff}", file=open("bank_analysis.txt", "a"))
+    print(f"Greatest Increase in Profits: {increase_month} (${increase})", file=open("bank_analysis.txt", "a"))
+    print(f"Greatest Decrease in Profits: {decrease_month} (${decrease}", file=open("bank_analysis.txt", "a"))
 
 
