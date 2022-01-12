@@ -61,13 +61,15 @@ with open(budget_csv) as csvfile:
     print(f"Greatest Decrease in Profits: {decrease_month} (${decrease})")
 
     # Outputting a text file with results of analysis
-    os.chdir(r"C:\Users\nsososa1\Documents\GT Boot Camp\python-challenge\PyBank\Analysis")
-    print("Financial Analysis", file=open("bank_analysis.txt", "w"))
-    print("----------------------------", file=open("bank_analysis.txt", "a"))
-    print(f"Total Months: {total_months}\n", file=open("bank_analysis.txt", "a"))
-    print(f"Total: $ {net_total}", file=open("bank_analysis.txt", "a"))
-    print(f"Average Change: $ {mean_diff}", file=open("bank_analysis.txt", "a"))
-    print(f"Greatest Increase in Profits: {increase_month} (${increase})", file=open("bank_analysis.txt", "a"))
-    print(f"Greatest Decrease in Profits: {decrease_month} (${decrease}", file=open("bank_analysis.txt", "a"))
+    # Python Day 2, Acitivty 10 for writing to a csv
+    # https://www.guru99.com/reading-and-writing-files-in-python.html
+    output_path = os.path.join("PyBank", "Analysis", "bank_analysis.txt")
 
-
+    with open(output_path, 'w') as f:
+        f.write(f"Finanacial Analysis \
+            \n---------------------------- \
+            \nTotal Months: {total_months} \
+            \nTotal: $ {net_total} \
+            \nAverage Change: ${mean_diff} \
+            \nGreatest Increase in Profits:{increase_month} (${increase}) \
+            \nGreatest Decrease in Profits: {decrease_month} (${decrease})")

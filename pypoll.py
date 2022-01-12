@@ -69,18 +69,15 @@ with open(election_csv) as csvfile:
     print(f"Winner: {winner}")
 
     # Outpuuting a text file with results of analysis
-    os.chdir(r"C:\Users\nsososa1\Documents\GT Boot Camp\python-challenge\PyPoll\Analysis")
-    print(f"Election Results", file=open("vote_analysis.txt", "w"))
-    print(f'-------------------------', file=open("vote_analysis.txt", "a"))
-    print(f"Total Votes: {total_votes}", file=open("vote_analysis.txt", "a"))
-    print(f'-------------------------', file=open("vote_analysis.txt", "a"))
-    print(f"{cand_list[0]}: {correy_percent: .3f}% ({correy_votes})", file=open("vote_analysis.txt", "a"))
-    print(f"{cand_list[1]}: {khan_percent: .3f}% ({khan_votes})", file=open("vote_analysis.txt", "a"))
-    print(f"{cand_list[2]}: {li_percent: .2f}% ({li_votes})", file=open("vote_analysis.txt", "a"))
-    print(f"{cand_list[3]}: {tooley_percent: .2f}% ({tooley_votes})", file=open("vote_analysis.txt", "a"))
-    print(f'-------------------------', file=open("vote_analysis.txt", "a"))
-    print(f"Winner: {winner}", file=open("vote_analysis.txt", "a"))
+    output_path = os.path.join("PyPoll", "Analysis", "vote_analysis.txt")
 
-
-
-
+    with open(output_path, "w") as f:
+        f.write(f"Election Results \n------------------------- \
+            \nTotal Votes: {total_votes} \
+            \n------------------------- \
+            \n{cand_list[0]}: {correy_percent: .3f}% ({correy_votes}) \
+            \n{cand_list[1]}: {khan_percent: .3f}% ({khan_votes}) \
+            \n{cand_list[2]}: {li_percent: .2f}% ({li_votes}) \
+            \n{cand_list[3]}: {tooley_percent: .2f}% ({tooley_votes}) \
+            \n------------------------- \
+            \nWinner: {winner}")
